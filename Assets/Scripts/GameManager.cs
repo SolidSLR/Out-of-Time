@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f)), Quaternion.identity);
-        Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f)), Quaternion.identity);
-        Instantiate(subtractTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f)), Quaternion.identity);
+        Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f)), Quaternion.identity);
+        Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f)), Quaternion.identity);
+        Instantiate(subtractTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f)), Quaternion.identity);
         StartCoroutine("SpawnCorout");
     }
 
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnTimeModifier(){
 
-        Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f));
+        Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f));
         //int randomPrefab = Random.Range(0,100);
         float randomPrefab = Random.value;
         if(randomPrefab < 0.5f){
@@ -72,5 +72,10 @@ public class GameManager : MonoBehaviour
 
     public void StopGame(){
         Time.timeScale = 0;
+    }
+
+    public void ResumeGame(){
+
+        Time.timeScale = 1;
     }
 }
