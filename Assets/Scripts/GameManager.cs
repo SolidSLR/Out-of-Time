@@ -9,11 +9,15 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject plusTime;
     public GameObject subtractTime;
-    public float gameTimer = 15f;
+    public float gameTimer;
     public TextMeshProUGUI timeText;
     // Start is called before the first frame update
     void Start()
     {
+
+        Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f)), Quaternion.identity);
+        Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f)), Quaternion.identity);
+        Instantiate(subtractTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f)), Quaternion.identity);
         StartCoroutine("SpawnCorout");
     }
 
@@ -33,10 +37,10 @@ public class GameManager : MonoBehaviour
 
     private void SpawnTimeModifier(){
 
-        Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 4.8f));
-        int randomPrefab = Random.Range(0,2);
-
-        if(randomPrefab==0){
+        Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.8f));
+        //int randomPrefab = Random.Range(0,100);
+        float randomPrefab = Random.value;
+        if(randomPrefab < 0.5f){
             Instantiate(plusTime, randomPos, Quaternion.identity);
         } else {
             Instantiate(subtractTime, randomPos, Quaternion.identity);
@@ -44,8 +48,6 @@ public class GameManager : MonoBehaviour
     }
 
     private IEnumerator SpawnCorout(){
-
-        // Modify condition to use the game and the player timers
 
         while(gameTimer>0){
 

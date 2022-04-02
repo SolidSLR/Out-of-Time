@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
 
     Rigidbody2D rb;
-    public float speed = 5f;
+    //Decrease speed as time goes by
+    public float speed;
     public GameManager gm;
     // Create the player timer
     public float playerTimer = 0;
@@ -22,22 +23,30 @@ public class Player : MonoBehaviour
 
         playerTimer += Time.deltaTime;
 
-        if(playerTimer/60 >= 3 || gm.gameTimer == 0){
+        speed = speed - Time.deltaTime/60;
+
+        if(playerTimer/60 >= 5){
+            
+            speed = 0.5f;
+        }
+
+        if(gm.gameTimer == 0){
+
             Time.timeScale = 0;
         }
 
         Debug.Log(playerTimer);
         
-        if(Input.GetKey(KeyCode.W)){
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
 
             rb.velocity = Vector2.up * speed;
-        } else if(Input.GetKey(KeyCode.S)){
+        } else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)){
 
             rb.velocity = Vector2.down * speed;
-        }else if(Input.GetKey(KeyCode.D)){
+        }else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
             
             rb.velocity = Vector2.right * speed;
-        }else if(Input.GetKey(KeyCode.A)){
+        }else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
 
             rb.velocity = Vector2.left * speed;
         }else{

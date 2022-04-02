@@ -486,7 +486,7 @@ MonoBehaviour:
   player: {fileID: 1803765318}
   plusTime: {fileID: 3850031942916090461, guid: fbda1e97b1e0b9b41bebd0cd302ee1d4, type: 3}
   subtractTime: {fileID: 1466742904333208558, guid: f6a220ed1a444304eaa7fcd47203f17d, type: 3}
-  gameTimer: 15
+  gameTimer: 61
   timeText: {fileID: 1958306169}
 --- !u!4 &1643141827
 Transform:
