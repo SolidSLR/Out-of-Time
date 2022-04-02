@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
         }else if(gameTimer <=0 || player.GetComponent<Player>().playerTimer/60 >=3){
 
             timeText.text = "00:00";
-            //Time.timeScale = 0;
             StopGame();
         }      
     }

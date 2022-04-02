@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     {
 
         playerTimer += Time.deltaTime;
-
         speed -= Time.deltaTime/60;
 
         if(playerTimer/60 >= 5){
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
 
         if(gm.gameTimer == 0){
 
-            //Time.timeScale = 0;
             StopGame();
         }
         
