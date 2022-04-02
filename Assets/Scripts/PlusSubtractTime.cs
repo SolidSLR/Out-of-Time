@@ -7,6 +7,11 @@ public class PlusSubtractTime : MonoBehaviour
     // Start is called before the first frame update
     float plusTime = 5f;
     float subtractTime = -10f;
+    private GameObject gm;
+
+    void Start(){
+        gm = GameObject.Find("GameManager");
+    }
 
     public float AddTime(){
 
@@ -17,5 +22,23 @@ public class PlusSubtractTime : MonoBehaviour
         }else {
             return 0;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other){
+
+        if(other.gameObject.tag == "Player"){
+
+            Debug.Log("Uoh, you hitted me! How rude!");
+
+            if(gameObject.tag == "PlusTime"){
+
+                gm.GetComponent<GameManager>().gameTimer += plusTime;
+            }else if(gameObject.tag == "SubtractTime"){
+
+                gm.GetComponent<GameManager>().gameTimer += subtractTime;
+            }
+        }
+
+        Destroy(gameObject);
     }
 }

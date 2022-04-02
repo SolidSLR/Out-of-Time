@@ -26,16 +26,14 @@ public class GameManager : MonoBehaviour
             timeText.text = TimeCalculator(gameTimer);  
         }else {
 
-            Debug.Log("Run out of time");
-
             timeText.text = "00:00";
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }      
     }
 
     private void SpawnTimeModifier(){
 
-        Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.5f), Random.Range(-5f, 5f));
+        Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 4.8f));
         int randomPrefab = Random.Range(0,2);
 
         if(randomPrefab==0){
