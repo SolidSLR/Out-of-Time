@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public GameManager gm;
     // Create the player timer
-
+    public float playerTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        playerTimer += Time.deltaTime;
+
+        if(playerTimer/60 >= 3 || gm.gameTimer == 0){
+            Time.timeScale = 0;
+        }
+
+        Debug.Log(playerTimer);
         
         if(Input.GetKey(KeyCode.W)){
 

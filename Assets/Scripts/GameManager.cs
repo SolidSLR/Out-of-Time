@@ -24,10 +24,10 @@ public class GameManager : MonoBehaviour
 
             gameTimer -= Time.deltaTime;
             timeText.text = TimeCalculator(gameTimer);  
-        }else {
+        }else if(gameTimer <=0 || player.GetComponent<Player>().playerTimer/60 >=3){
 
             timeText.text = "00:00";
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }      
     }
 

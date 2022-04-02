@@ -483,8 +483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f59cb83e80f0e49941c53d9e68243f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1803765318}
   plusTime: {fileID: 3850031942916090461, guid: fbda1e97b1e0b9b41bebd0cd302ee1d4, type: 3}
   subtractTime: {fileID: 1466742904333208558, guid: f6a220ed1a444304eaa7fcd47203f17d, type: 3}
+  gameTimer: 15
   timeText: {fileID: 1958306169}
 --- !u!4 &1643141827
 Transform:
@@ -513,9 +515,9 @@ GameObject:
   - component: {fileID: 1803765322}
   - component: {fileID: 1803765321}
   - component: {fileID: 1803765323}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -634,6 +636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3d8c8f0159e6c4ab698670d337413b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  gm: {fileID: 1643141826}
+  playerTimer: 0
 --- !u!1 &1958306167
 GameObject:
   m_ObjectHideFlags: 0
