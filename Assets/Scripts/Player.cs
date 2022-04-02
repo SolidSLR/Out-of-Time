@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     Rigidbody2D rb;
     public float speed = 5f;
-
+    public GameManager gm;
     // Create the player timer
 
     // Start is called before the first frame update

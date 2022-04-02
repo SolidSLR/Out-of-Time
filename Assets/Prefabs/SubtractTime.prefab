@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1466742904333208553}
   - component: {fileID: 1466742904333208552}
   - component: {fileID: 1466742904333208559}
-  m_Layer: 8
+  - component: {fileID: -4393446340201402700}
+  m_Layer: 0
   m_Name: SubtractTime
-  m_TagString: Untagged
+  m_TagString: SubtractTime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4393446340201402700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466742904333208558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a585f8e4acee1104b9d64ed09f637431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

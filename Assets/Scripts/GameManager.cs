@@ -9,12 +9,12 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject plusTime;
     public GameObject subtractTime;
-    private float gameTimer = 3f;
+    public float gameTimer = 15f;
     public TextMeshProUGUI timeText;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("SpwanCorout");
+        StartCoroutine("SpawnCorout");
     }
 
     // Update is called once per frame
@@ -45,13 +45,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator SpwanCorout(){
+    private IEnumerator SpawnCorout(){
 
         // Modify condition to use the game and the player timers
 
-        int j = 0;
-
-        while(j <5){
+        while(gameTimer>0){
 
             // Randomize seconds of waiting
 
@@ -60,7 +58,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(seconds);
 
             SpawnTimeModifier();
-            j++;
         }
     }
 
