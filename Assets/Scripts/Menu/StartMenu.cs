@@ -1,18 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class StartMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public GameObject infoScreen;
+
+    void Start(){
+
+        infoScreen.SetActive(false);
+    }
+    public void OnPlayGameClick(){
+
+        Debug.Log("You will play the game");
+
+        SceneManager.LoadScene("Game"); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnGameInfoClick(){
+
+        infoScreen.SetActive(true);
+
+        Debug.Log("I will show you some info");
+    }
+
+    public void OnExitInfoClick(){
+
+        infoScreen.SetActive(false);
+    }
+
+    public void OnExitGameClick(){
+
+        Application.Quit();
     }
 }

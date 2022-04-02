@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameUIController : MonoBehaviour
@@ -25,6 +26,8 @@ public class GameUIController : MonoBehaviour
 
     public void OnStartMenuClick(){
         Debug.Log("You will return to the star menu");
+
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void OnResumeClick(){
