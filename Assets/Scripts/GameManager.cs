@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
         }else if(gameTimer <=0 || player.GetComponent<Player>().playerTimer/60 >=3){
 
             timeText.text = "00:00";
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
+            StopGame();
         }      
     }
 
@@ -67,5 +68,9 @@ public class GameManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(timer % 60);
 
         return string.Format("{0:00}:{1:00}",minutes,seconds);
+    }
+
+    public void StopGame(){
+        Time.timeScale = 0;
     }
 }

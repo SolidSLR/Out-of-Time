@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
         playerTimer += Time.deltaTime;
 
-        speed = speed - Time.deltaTime/60;
+        speed -= Time.deltaTime/60;
 
         if(playerTimer/60 >= 5){
             
@@ -32,10 +32,9 @@ public class Player : MonoBehaviour
 
         if(gm.gameTimer == 0){
 
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
+            StopGame();
         }
-
-        Debug.Log(playerTimer);
         
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
 
@@ -55,5 +54,10 @@ public class Player : MonoBehaviour
 
             
         }
+    }
+
+    public void StopGame(){
+
+        Time.timeScale = 0;
     }
 }
