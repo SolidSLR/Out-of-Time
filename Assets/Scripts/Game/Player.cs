@@ -10,11 +10,12 @@ public class Player : MonoBehaviour
     public float speed;
     public GameManager gm;
     // Create the player timer
-    public float playerTimer = 0;
+    public static float playerTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ResumeGame();
     }
 
     // Update is called once per frame

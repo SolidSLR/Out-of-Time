@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
         Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f)), Quaternion.identity);
         Instantiate(plusTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f)), Quaternion.identity);
         Instantiate(subtractTime, new Vector2(Random.Range(-6.4f, 6.4f), Random.Range(-4.8f, 3.5f)), Quaternion.identity);
+        gameTimer = 61f;
+        ResumeGame();
         StartCoroutine("SpawnCorout");
     }
 
@@ -28,10 +31,11 @@ public class GameManager : MonoBehaviour
 
             gameTimer -= Time.deltaTime;
             timeText.text = TimeCalculator(gameTimer);  
-        }else if(gameTimer <=0 || player.GetComponent<Player>().playerTimer/60 >=3){
+        }else if(gameTimer <=0 || Player.playerTimer/60 >=3){
 
             timeText.text = "00:00";
             StopGame();
+            SceneManager.LoadScene("GameOver");
         }      
     }
 
