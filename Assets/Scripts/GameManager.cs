@@ -5,13 +5,11 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    // Reference to the player. Will be used to modify its speed.
+    public GameObject player;
     public GameObject plusTime;
-
     public GameObject subtractTime;
-
-    // Create the game timer
     private float gameTimer = 3f;
-
     public TextMeshProUGUI timeText;
     // Start is called before the first frame update
     void Start()
@@ -25,24 +23,22 @@ public class GameManager : MonoBehaviour
         if(gameTimer>0){
 
             gameTimer -= Time.deltaTime;
-
-            timeText.text = TimeCalculator(gameTimer); 
-            
+            timeText.text = TimeCalculator(gameTimer);  
         }else {
+
             Debug.Log("Run out of time");
 
             timeText.text = "00:00";
+            Time.timeScale = 0;
         }      
     }
 
     private void SpawnTimeModifier(){
 
         Vector2 randomPos = new Vector2(Random.Range(-6.4f, 6.5f), Random.Range(-5f, 5f));
-
         int randomPrefab = Random.Range(0,2);
 
         if(randomPrefab==0){
-
             Instantiate(plusTime, randomPos, Quaternion.identity);
         } else {
             Instantiate(subtractTime, randomPos, Quaternion.identity);
@@ -61,10 +57,9 @@ public class GameManager : MonoBehaviour
 
             float seconds = Random.Range(1f, 2.5f);
 
-            yield return new WaitForSeconds(seconds);        
+            yield return new WaitForSeconds(seconds);
 
             SpawnTimeModifier();
-
             j++;
         }
     }

@@ -6,11 +6,10 @@ public class Player : MonoBehaviour
 {
 
     Rigidbody2D rb;
-
-    private float speed = 5f;
+    public float speed = 5f;
 
     // Create the player timer
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +33,7 @@ public class Player : MonoBehaviour
 
             rb.velocity = Vector2.left * speed;
         }else{
+
             rb.velocity = new Vector2(0,0);
         }
     }
