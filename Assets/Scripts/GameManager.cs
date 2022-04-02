@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class GameManager : MonoBehaviour
     public GameObject subtractTime;
 
     // Create the game timer
+    private float gameTimer = 3f;
 
+    public TextMeshProUGUI timeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(gameTimer>0){
+
+            gameTimer -= Time.deltaTime;
+
+            timeText.text = TimeCalculator(gameTimer); 
+            
+        }else {
+            Debug.Log("Run out of time");
+
+            timeText.text = "00:00";
+        }      
     }
 
     private void SpawnTimeModifier(){
@@ -54,5 +67,13 @@ public class GameManager : MonoBehaviour
 
             j++;
         }
+    }
+
+    private string TimeCalculator(float timer){
+
+        float minutes = Mathf.FloorToInt(timer / 60);
+        float seconds = Mathf.FloorToInt(timer % 60);
+
+        return string.Format("{0:00}:{1:00}",minutes,seconds);
     }
 }
