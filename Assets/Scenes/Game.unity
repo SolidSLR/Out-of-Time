@@ -812,7 +812,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 748, y: 70}
+  m_SizeDelta: {x: 765, y: 70}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &856438562
 MonoBehaviour:
@@ -1822,7 +1822,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   gm: {fileID: 1643141826}
-  playerTimer: 0
 --- !u!1 &1891709429
 GameObject:
   m_ObjectHideFlags: 0
