@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     private float speed = 5f;
+
+    // Create the player timer
+    
     // Start is called before the first frame update
     void Start()
     {
