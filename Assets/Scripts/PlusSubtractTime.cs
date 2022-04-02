@@ -9,8 +9,19 @@ public class PlusSubtractTime : MonoBehaviour
     float subtractTime = -10f;
     private GameObject gm;
 
+    public float internalTimer;
+
     void Start(){
         gm = GameObject.Find("GameManager");
+    }
+
+    void Update(){
+
+        internalTimer += Time.deltaTime;
+
+        if(internalTimer/60 >= 3){
+            Destroy(gameObject);
+        }
     }
 
     public float AddTime(){
