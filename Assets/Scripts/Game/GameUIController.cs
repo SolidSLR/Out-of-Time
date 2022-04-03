@@ -10,8 +10,11 @@ public class GameUIController : MonoBehaviour
     public Player player;
     public GameObject menuLayer;
 
+    private AudioSource audioSource;    
+
     void Start(){
 
+        audioSource = GetComponent<AudioSource>();
         menuLayer.SetActive(false);
     }
 
@@ -19,6 +22,7 @@ public class GameUIController : MonoBehaviour
 
         Debug.Log("Menu button clicked");
 
+        audioSource.Play();
         menuLayer.SetActive(true);
         gm.StopGame();
         player.StopGame();
@@ -27,12 +31,14 @@ public class GameUIController : MonoBehaviour
     public void OnStartMenuClick(){
         Debug.Log("You will return to the star menu");
 
+        audioSource.Play();
         SceneManager.LoadScene("StartMenu");
     }
 
     public void OnResumeClick(){
         Debug.Log("You will resume your current game");
 
+        audioSource.Play();
         menuLayer.SetActive(false);
         gm.ResumeGame();
         player.ResumeGame();

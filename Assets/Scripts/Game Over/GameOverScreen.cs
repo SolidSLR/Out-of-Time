@@ -8,11 +8,12 @@ public class GameOverScreen : MonoBehaviour
 {
 
     public float playerTime = 60f;
-
     public TextMeshProUGUI playerTimeText;
+    private AudioSource audioSource;
 
     void Start(){
 
+        audioSource = GetComponent<AudioSource>();
         playerTime = Player.playerTimer;
 
         float minutes = Mathf.FloorToInt(playerTime / 60);
@@ -24,14 +25,14 @@ public class GameOverScreen : MonoBehaviour
     public void OnReplayClick(){
 
         Debug.Log("You will play again");
-
+        audioSource.Play();
         SceneManager.LoadScene("Game");
     }
 
     public void OnStartMenuClick(){
 
         Debug.Log("You will go to the start menu");
-
+        audioSource.Play();
         SceneManager.LoadScene("StartMenu");
     }
 }
