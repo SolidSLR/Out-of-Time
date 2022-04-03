@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
     public GameManager gm;
     // Create the player timer
     public static float playerTimer = 0;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         speed = 5f;
+        audioSource = GetComponent<AudioSource>();
         ResumeGame();
     }
 
@@ -54,6 +56,14 @@ public class Player : MonoBehaviour
 
             
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other){
+
+        if(other.gameObject.tag == "PlusTime" || other.gameObject.tag == "SubtractTime"){
+            audioSource.Play();
+        }
+
     }
 
     public void StopGame(){
