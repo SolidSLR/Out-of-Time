@@ -8,11 +8,13 @@ public class PlusSubtractTime : MonoBehaviour
     float plusTime = 5f;
     float subtractTime = -10f;
     private GameObject gm;
-
+    public AudioSource audioSource;
     public float internalTimer;
 
     void Start(){
         gm = GameObject.Find("GameManager");
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update(){
@@ -49,6 +51,7 @@ public class PlusSubtractTime : MonoBehaviour
                 gm.GetComponent<GameManager>().gameTimer += subtractTime;
             }
         }
+        audioSource.Play();
 
         Destroy(gameObject);
     }
