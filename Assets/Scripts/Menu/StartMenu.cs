@@ -8,20 +8,24 @@ using TMPro;
 public class StartMenu : MonoBehaviour
 {
     public GameObject infoScreen;
+    private AudioSource audioSource;
 
-    void Start(){
+    void Awake(){
 
+        audioSource = GetComponent<AudioSource>();
         infoScreen.SetActive(false);
     }
     public void OnPlayGameClick(){
 
         Debug.Log("You will play the game");
 
+        audioSource.Play();
         SceneManager.LoadScene("Game"); 
     }
 
     public void OnGameInfoClick(){
 
+        audioSource.Play();
         infoScreen.SetActive(true);
 
         Debug.Log("I will show you some info");
@@ -29,11 +33,13 @@ public class StartMenu : MonoBehaviour
 
     public void OnExitInfoClick(){
 
+        audioSource.Play();
         infoScreen.SetActive(false);
     }
 
     public void OnExitGameClick(){
 
+        audioSource.Play();
         Application.Quit();
     }
 }

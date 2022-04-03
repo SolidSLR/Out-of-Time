@@ -52,7 +52,6 @@ public class PlusSubtractTime : MonoBehaviour
             }
         }
         audioSource.Play();
-
         Destroy(gameObject);
     }
 }
