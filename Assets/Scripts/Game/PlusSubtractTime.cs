@@ -19,7 +19,7 @@ public class PlusSubtractTime : MonoBehaviour
 
         internalTimer += Time.deltaTime;
 
-        if(internalTimer%60 >= 2.5f && gameObject.tag == "PlusTime"){
+        if(internalTimer%60 >= 3f && gameObject.tag == "PlusTime"){
             Destroy(gameObject);
         }
     }

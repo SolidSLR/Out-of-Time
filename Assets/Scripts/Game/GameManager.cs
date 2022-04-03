@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         Vector2 randomPos = new Vector2(Random.Range(-6.3f, 6.3f), Random.Range(-4.8f, 3.5f));
         //int randomPrefab = Random.Range(0,100);
         float randomPrefab = Random.value;
-        if(randomPrefab < 0.5f){
+        if(randomPrefab < 0.65f){
             Instantiate(plusTime, randomPos, Quaternion.identity);
         } else {
             Instantiate(subtractTime, randomPos, Quaternion.identity);
