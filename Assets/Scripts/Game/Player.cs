@@ -37,24 +37,25 @@ public class Player : MonoBehaviour
 
             StopGame();
         }
-        
+        // Commit after LD ends
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)){
 
-            rb.velocity = Vector2.up * speed;
-        } else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)){
+            transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+        
+        if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)){
 
-            rb.velocity = Vector2.down * speed;
-        }else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+            transform.position += Vector3.down * speed * Time.deltaTime;
+        }
+        
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
             
-            rb.velocity = Vector2.right * speed;
-        }else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+        
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
 
-            rb.velocity = Vector2.left * speed;
-        }else{
-
-            rb.velocity = new Vector2(0,0);
-
-            
+            transform.position += Vector3.left * speed * Time.deltaTime;
         }
     }
 
