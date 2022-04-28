@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     private void SpawnTimeModifier(){
 
         Vector2 randomPos = new Vector2(Random.Range(-6.3f, 6.3f), Random.Range(-4.8f, 3.5f));
-        //int randomPrefab = Random.Range(0,100);
         float randomPrefab = Random.value;
         if(randomPrefab < 0.55f){
             Instantiate(plusTime, randomPos, Quaternion.identity);

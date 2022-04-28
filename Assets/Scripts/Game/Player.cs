@@ -26,11 +26,14 @@ public class Player : MonoBehaviour
     {
 
         playerTimer += Time.deltaTime;
-        speed -= Time.deltaTime/60;
+        //speed -= Time.deltaTime/60;
 
-        if(playerTimer/60 >= 5){
+        if(playerTimer/60 <= 3){
             
-            speed = 0.5f;
+            speed -= Time.deltaTime/60;
+        }else if(playerTimer/60 > 3 && playerTimer/60 <=5){
+            
+            speed -= ((Time.deltaTime/60)/3)*2;
         }
 
         if(gm.gameTimer == 0){
